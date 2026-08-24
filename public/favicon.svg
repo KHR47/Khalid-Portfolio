@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="KH favicon">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#79cfe8"/>
+      <stop offset="100%" stop-color="#86a5ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#0d1117"/>
+  <path d="M18 48V16h8l10 16 10-16h8v32h-8V28L36 44h-8L26 28v20h-8Z" fill="url(#g)"/>
+</svg>

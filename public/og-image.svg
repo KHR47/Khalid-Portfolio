@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Md. Khalid Hasan portfolio preview">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1118"/>
+      <stop offset="50%" stop-color="#111a24"/>
+      <stop offset="100%" stop-color="#171927"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#7be2ff"/>
+      <stop offset="100%" stop-color="#90a9ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" rx="28"/>
+  <circle cx="1030" cy="120" r="120" fill="url(#accent)" opacity="0.15"/>
+  <circle cx="250" cy="530" r="180" fill="#65d7d6" opacity="0.08"/>
+  <g transform="translate(96 120)">
+    <rect x="0" y="0" width="180" height="180" rx="34" fill="url(#accent)" opacity="0.9"/>
+    <text x="90" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="70" font-weight="700" fill="#07141a">KH</text>
+  </g>
+  <text x="96" y="360" font-family="Arial, sans-serif" font-size="76" font-weight="700" fill="#f3f9ff">Md. Khalid Hasan</text>
+  <text x="96" y="430" font-family="Arial, sans-serif" font-size="30" fill="#b6d3e5">Software Developer | Web Developer | Full-Stack Enthusiast</text>
+  <text x="96" y="500" font-family="Arial, sans-serif" font-size="24" fill="#7dd2db">Next.js • NestJS • PostgreSQL</text>
+</svg>
