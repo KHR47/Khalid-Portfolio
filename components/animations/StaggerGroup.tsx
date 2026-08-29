@@ -6,43 +6,13 @@ import type { ReactNode } from 'react';
 export function StaggerGroup({
   children,
   className,
-  delay = 0,
-  stagger = 0.08,
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
   stagger?: number;
 }) {
-  const shouldReduceMotion = useReducedMotion();
-
-  return (
-    <motion.div
-      className={className}
-      initial={shouldReduceMotion ? false : { opacity: 0 }}
-      whileInView={shouldReduceMotion ? undefined : { opacity: 1 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.45, ease: 'easeOut' }}
-    >
-      {Array.isArray(children)
-        ? children.map((child, index) => (
-            <motion.div
-              key={index}
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
-              whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 0.42,
-                delay: delay + index * stagger,
-                ease: 'easeOut',
-              }}
-            >
-              {child}
-            </motion.div>
-          ))
-        : children}
-    </motion.div>
-  );
+  return <div className={className}>{children}</div>;
 }
 
 export function StaggerItem({
@@ -59,10 +29,10 @@ export function StaggerItem({
   return (
     <motion.div
       className={className}
-      initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+      initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
       whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.45, delay, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 'some', margin: '60px 0px 0px 0px' }}
+      transition={{ duration: 0.4, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
     >
       {children}
     </motion.div>

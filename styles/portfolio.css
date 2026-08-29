@@ -197,9 +197,8 @@
   grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.85fr);
   gap: 52px;
   align-items: center;
-  min-height: 100vh;
-  padding-top: 18px;
-  overflow: hidden;
+  min-height: calc(100vh - 80px);
+  padding: 40px 0 80px;
 }
 
 .hero::before {
@@ -1140,35 +1139,6 @@
   text-align: center;
   color: rgba(219, 228, 236, 0.62);
   font-size: 0.86rem;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.7s ease forwards;
-}
-
-.reveal:nth-of-type(2) {
-  animation-delay: 0.08s;
-}
-
-.reveal:nth-of-type(3) {
-  animation-delay: 0.12s;
-}
-
-.reveal:nth-of-type(4) {
-  animation-delay: 0.16s;
-}
-
-.reveal:nth-of-type(5) {
-  animation-delay: 0.2s;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @keyframes drift {

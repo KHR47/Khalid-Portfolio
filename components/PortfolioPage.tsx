@@ -431,9 +431,9 @@ export function PortfolioPage() {
         </div>
       </header>
 
-      <main id="home">
+      <main>
         {/* HERO SECTION */}
-        <section className="hero section">
+        <section id="home" className="hero section">
           <div className="hero-copy">
             <div className="hero-status-row">
               <p className="eyebrow">Available for internship / developer roles</p>
