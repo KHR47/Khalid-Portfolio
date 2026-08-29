@@ -2,15 +2,16 @@
 
 # 🌌 Md. Khalid Hasan — Modern Developer Portfolio
 
-An ultra-sleek, responsive, and performance-optimized personal portfolio web application built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Motion**.
+An ultra-sleek, responsive, and performance-optimized personal portfolio web application built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, **Motion**, and **Vercel Web Analytics**.
 
-[![Live Demo](https://img.shields.io/badge/Demo-Live%20Website-7cd5df?style=for-the-badge&logo=vercel&logoColor=white)](https://khalid-portfolio-ochre.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Demo-Live%20Website-38bdf8?style=for-the-badge&logo=vercel&logoColor=white)](https://khalid-portfolio-ochre.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Motion](https://img.shields.io/badge/Motion-Framer-FF0055?style=for-the-badge&logo=framer&logoColor=white)](https://motion.dev/)
+[![Vercel Analytics](https://img.shields.io/badge/Vercel-Analytics-black?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/analytics)
 
-[**Explore Live Demo »**](https://khalid-portfolio-ochre.vercel.app/)
+[**Explore Live Website »**](https://khalid-portfolio-ochre.vercel.app/)
 
 </div>
 
@@ -18,13 +19,15 @@ An ultra-sleek, responsive, and performance-optimized personal portfolio web app
 
 ## ✨ Features & Highlights
 
-- **🪐 Immersive Space Aesthetic:** Cosmic dark theme featuring deep radial gradients, interactive canvas starfield, and glassmorphic panels.
-- **⚡ Reactive Navigation & Scrollspy:** Sticky header with real-time reading progress bar, dynamic section tracking (`#about`, `#education`, `#skills`, `#projects`, `#contact`), and smooth scroll offsets.
+- **🪐 Ultra-Premium Obsidian Space Aesthetic:** Deep dark theme featuring sleek glassmorphism, multi-tone canvas starfield, and refined typography.
+- **📊 Real-Time Vercel Web Analytics:** Integrated `@vercel/analytics/next` tracking privacy-friendly visitor traffic, page views, and performance metrics in production.
+- **⚡ Reactive Navigation & Scrollspy:** Floating pill navbar with reading progress bar, dynamic section tracking (`#home`, `#about`, `#education`, `#skills`, `#projects`, `#contact`), and smooth scroll offsets.
 - **🎓 Academic Journey & Qualifications:** Structured timeline detailing B.Sc. in CSE at AIUB, HSC at Rajshahi New Govt. Degree College, and SSC at Rajshahi Collegiate School with key competencies.
-- **🧲 Micro-Interactions & Physics:** Magnetic buttons with spring physics, character and word reveals, and staggered viewport entrance animations.
-- **🛠️ Categorized Skills Matrix:** Interactive badges grouped across Languages, Backend Frameworks, Frontend, Databases, AI/ML, and Tools.
-- **💼 Interactive Project Showcase & Case Study Modals:** Filterable grid of 10 engineering projects spanning AI/NLP (BERT & RoBERTa), full-stack platforms, REST APIs, desktop applications, and computer graphics simulations with case-study modals.
-- **📬 Full-Stack Contact API:** Integrated contact route supporting **Resend API** for high-deliverability emails, **Nodemailer SMTP** as a fallback, quick inquiry topic pills, and one-click email copying.
+- **🧲 Micro-Interactions & Physics:** Magnetic buttons with spring physics, character reveals, and smooth viewport entrance animations.
+- **🛠️ Categorized Skills Matrix:** Interactive 6-box grid grouped across Languages, Backend Frameworks, Frontend & UI, Databases, AI/ML & Graphics, and Tools & Networking.
+- **💼 Project Showcase & Case Study Modals:** Filterable grid of 10 engineering projects spanning AI/NLP (BERT & RoBERTa), full-stack platforms, REST APIs, desktop applications, and computer graphics simulations with case-study modals.
+- **📄 Instant CV Download:** Generates and serves official 2-page CV (`Md_Khalid_Hasan_CV.pdf`) directly with one click.
+- **📬 Full-Stack Contact API:** Integrated contact route supporting **Resend API** for high-deliverability emails, **Nodemailer SMTP** fallback, quick inquiry topic pills, and one-click email copying.
 - **📱 Fully Responsive:** Adaptive mobile navigation drawer, fluid typography clamps, and tailored layouts for all screen sizes.
 - **🔍 SEO & Social Graph:** Configured with OpenGraph, Twitter card metadata, dynamic typography from Google Fonts (`Space Grotesk` + `Manrope`), and SVG icons.
 
@@ -38,6 +41,7 @@ An ultra-sleek, responsive, and performance-optimized personal portfolio web app
 | **UI Library** | [React 19](https://react.dev/) with React Compiler optimization |
 | **Language** | [TypeScript 5](https://www.typescriptlang.org/) |
 | **Animation Engine** | [Motion](https://motion.dev/) (`motion/react`) |
+| **Analytics** | [@vercel/analytics](https://vercel.com/analytics) |
 | **Styling** | Vanilla CSS Design System with CSS Variables |
 | **Typography** | Google Fonts (`Space Grotesk` & `Manrope`) via `next/font` |
 | **Email Services** | [Resend](https://resend.com/) & [Nodemailer](https://nodemailer.com/) |
@@ -55,21 +59,21 @@ portfolio-next/
 │   │       └── route.ts          # Serverless email dispatch handler
 │   ├── favicon.ico
 │   ├── globals.css               # Global theme tokens, gradients & resets
-│   ├── layout.tsx                # Root layout with SEO and font configurations
+│   ├── layout.tsx                # Root layout with Vercel Analytics, SEO & fonts
 │   └── page.tsx                  # Home entry point
 ├── components/
 │   ├── animations/               # Reusable Motion animation primitives
 │   │   ├── MagneticButton.tsx    # Magnetic mouse-tracking button
 │   │   ├── Reveal.tsx            # In-view scroll entrance wrapper
 │   │   ├── StaggerGroup.tsx      # Staggered children container
-│   │   ├── Starfield.tsx         # Lightweight canvas starfield animation
+│   │   ├── Starfield.tsx         # Lightweight multi-tone canvas starfield
 │   │   ├── TextReveal.tsx        # Dynamic character/word reveal
 │   │   ├── useScrollProgress.ts  # Custom hook for window scroll tracking
 │   │   └── index.ts              # Component exports
 │   ├── EducationTimeline.tsx     # Academic qualifications and timeline
 │   ├── ProjectModal.tsx          # Case study modal dialog
 │   └── PortfolioPage.tsx         # Main portfolio layout and interactive state
-├── public/                       # Static images, icons, and SVG graphics
+├── public/                       # Static images, official CV PDF, and SVG graphics
 ├── styles/
 │   └── portfolio.css             # Component styling, layouts, and responsive queries
 ├── .env.example                  # Environment configuration template
@@ -136,7 +140,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
    - `RESEND_API_KEY`: Your API key from [Resend](https://resend.com)
    - `CONTACT_TO_EMAIL`: `hasankhalid16648@gmail.com`
    - `RESEND_FROM_EMAIL`: `Portfolio Contact <onboarding@resend.dev>`
-4. Deploy! Next.js App Router and API routes will be configured automatically.
+4. Deploy! Vercel Web Analytics and Next.js App Router will activate automatically.
 
 ---
 

@@ -14,16 +14,16 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://example.com'),
-  title: 'Md. Khalid Hasan | Portfolio',
+  metadataBase: new URL('https://khalid-portfolio-ochre.vercel.app'),
+  title: 'Md. Khalid Hasan | Full-Stack & Backend Developer',
   description:
-    'Computer Science student and software developer portfolio featuring projects, skills, and contact details.',
+    'Portfolio of Md. Khalid Hasan — Final-semester CSE student at AIUB specializing in ASP.NET Core, Node.js, NestJS, Next.js, and scalable web architectures.',
   openGraph: {
-    title: 'Md. Khalid Hasan | Portfolio',
+    title: 'Md. Khalid Hasan | Full-Stack & Backend Developer',
     description:
-      'Computer Science student and software developer portfolio featuring projects, skills, and contact details.',
-    url: 'https://example.com',
-    siteName: 'Md. Khalid Hasan',
+      'Explore projects, engineering case studies, academic milestones, and technical skills of Md. Khalid Hasan.',
+    url: 'https://khalid-portfolio-ochre.vercel.app',
+    siteName: 'Md. Khalid Hasan Portfolio',
     images: [
       {
         url: '/og-image.svg',
