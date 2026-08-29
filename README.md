@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# 🌌 Md. Khalid Hasan — Modern Developer Portfolio
 
-First, run the development server:
+An ultra-sleek, responsive, and performance-optimized personal portfolio web application built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Motion**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+[![Live Demo](https://img.shields.io/badge/Demo-Live%20Website-7cd5df?style=for-the-badge&logo=vercel&logoColor=white)](https://khalid-portfolio-ochre.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Motion](https://img.shields.io/badge/Motion-Framer-FF0055?style=for-the-badge&logo=framer&logoColor=white)](https://motion.dev/)
+
+[**Explore Live Demo »**](https://khalid-portfolio-ochre.vercel.app/)
+
+</div>
+
+---
+
+## ✨ Features & Highlights
+
+- **🪐 Immersive Space Aesthetic:** Cosmic dark theme featuring deep radial gradients, orbiting celestial textures, and glassmorphism.
+- **⚡ Reactive Navigation & Scrollspy:** Sticky header with real-time reading progress bar, dynamic section tracking (`#about`, `#skills`, `#projects`, `#contact`), and smooth scroll offsets.
+- **🧲 Micro-Interactions & Physics:** Magnetic buttons with spring physics, character and word reveals, and staggered viewport entrance animations.
+- **🛠️ Categorized Skills Matrix:** Interactive badges grouped across Frontend, Backend, Databases, Languages, and Development Tools.
+- **💼 Project Showcase:** Curated grid of 8 software engineering projects spanning full-stack web platforms, REST APIs, simulations, and desktop apps with direct GitHub repository links.
+- **📬 Full-Stack Contact API:** Integrated contact route supporting **Resend API** for high-deliverability emails, **Nodemailer SMTP** as a fallback, and localized developer mode.
+- **📱 Fully Responsive:** Adaptive mobile navigation drawer, fluid typography clamps, and tailored layouts for all screen sizes.
+- **🔍 SEO & Social Graph:** Configured with OpenGraph, Twitter card metadata, dynamic typography from Google Fonts (`Space Grotesk` + `Manrope`), and SVG icons.
+
+---
+
+## 🛠️ Tech Stack
+
+| Domain | Technology |
+| :--- | :--- |
+| **Framework** | [Next.js 16 (App Router)](https://nextjs.org/) |
+| **UI Library** | [React 19](https://react.dev/) with React Compiler optimization |
+| **Language** | [TypeScript 5](https://www.typescriptlang.org/) |
+| **Animation Engine** | [Motion](https://motion.dev/) (`motion/react`) |
+| **Styling** | Vanilla CSS Design System with CSS Variables |
+| **Typography** | Google Fonts (`Space Grotesk` & `Manrope`) via `next/font` |
+| **Email Services** | [Resend](https://resend.com/) & [Nodemailer](https://nodemailer.com/) |
+| **Deployment** | [Vercel](https://vercel.com/) |
+
+---
+
+## 📂 Project Structure
+
+```
+portfolio-next/
+├── app/
+│   ├── api/
+│   │   └── contact/
+│   │       └── route.ts          # Serverless email dispatch handler
+│   ├── favicon.ico
+│   ├── globals.css               # Global theme tokens, gradients & resets
+│   ├── layout.tsx                # Root layout with SEO and font configurations
+│   └── page.tsx                  # Home entry point
+├── components/
+│   ├── animations/               # Reusable Motion animation primitives
+│   │   ├── MagneticButton.tsx    # Magnetic mouse-tracking button
+│   │   ├── Reveal.tsx            # In-view scroll entrance wrapper
+│   │   ├── StaggerGroup.tsx      # Staggered children container
+│   │   ├── TextReveal.tsx        # Dynamic character/word reveal
+│   │   ├── useScrollProgress.ts  # Custom hook for window scroll tracking
+│   │   └── index.ts              # Component exports
+│   └── PortfolioPage.tsx         # Main portfolio layout and interactive state
+├── public/                       # Static images, icons, and SVG graphics
+├── styles/
+│   └── portfolio.css             # Component styling, layouts, and responsive queries
+├── .env.example                  # Environment configuration template
+├── next.config.ts                # Next.js configuration
+├── package.json
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
+- Node.js `v18.18.0` or later
+- npm, pnpm, or yarn
 
-## Learn More
+### 1. Clone the repository
+```bash
+git clone https://github.com/KHR47/Khalid-Portfolio.git
+cd Khalid-Portfolio
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Install dependencies
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Configure environment variables (Optional)
+Create a `.env.local` file in the root directory:
+```bash
+cp .env.example .env.local
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Populate the values if you wish to test live email delivery:
+```env
+# Resend (Recommended)
+RESEND_API_KEY=re_your_api_key_here
+CONTACT_TO_EMAIL=your_email@example.com
+RESEND_FROM_EMAIL="Portfolio Contact <onboarding@resend.dev>"
 
-## Deploy on Vercel
+# SMTP Fallback (Optional)
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_USER=your_smtp_username
+SMTP_PASS=your_smtp_password
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*(Note: If no email credentials are provided, the contact form automatically logs submissions to the console in local demo mode.)*
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 4. Run the development server
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+
+---
+
+## 🚢 Deployment on Vercel
+
+1. Push your code to GitHub.
+2. Import the repository in [Vercel](https://vercel.com/new).
+3. In **Project Settings > Environment Variables**, add:
+   - `RESEND_API_KEY`: Your API key from [Resend](https://resend.com)
+   - `CONTACT_TO_EMAIL`: `hasankhalid16648@gmail.com`
+   - `RESEND_FROM_EMAIL`: `Portfolio Contact <onboarding@resend.dev>`
+4. Deploy! Next.js App Router and API routes will be configured automatically.
+
+---
+
+## 👤 Author
+
+**Md. Khalid Hasan**
+* Computer Science Student at American International University-Bangladesh (AIUB)
+* **GitHub:** [@KHR47](https://github.com/KHR47)
+* **LinkedIn:** [linkedin.com/in/khr47](https://www.linkedin.com/in/khr47)
+* **Email:** [hasankhalid16648@gmail.com](mailto:hasankhalid16648@gmail.com)
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).

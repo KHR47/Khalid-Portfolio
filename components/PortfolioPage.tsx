@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'motion/react';
-import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { useState, useEffect, type ChangeEvent, type FormEvent } from 'react';
 import {
   MagneticButton,
   Reveal,
@@ -119,6 +119,7 @@ const initialFormState = {
 
 export function PortfolioPage() {
   const { progress } = useScrollProgress();
+  const [activeSection, setActiveSection] = useState('home');
   const [menuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState(initialFormState);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -126,6 +127,28 @@ export function PortfolioPage() {
     type: 'idle',
     message: '',
   });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 200;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionEl = document.getElementById(sections[i]);
+        if (sectionEl) {
+          const top = sectionEl.offsetTop;
+          if (scrollPosition >= top) {
+            setActiveSection(sections[i]);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
@@ -169,14 +192,7 @@ export function PortfolioPage() {
   };
 
   return (
-    <div
-      className="page-shell"
-      style={{
-        width: 'calc(100% - 72px)',
-        maxWidth: '1360px',
-        margin: '0 auto',
-      }}
-    >
+    <div className="page-shell">
       <motion.div
         className="scroll-progress"
         style={{
@@ -196,11 +212,23 @@ export function PortfolioPage() {
         </div>
 
         <nav className={`main-nav ${menuOpen ? 'open' : ''}`} aria-label="Main navigation">
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const sectionId = item.href.replace('#', '');
+            const isActive = activeSection === sectionId;
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                className={isActive ? 'active' : ''}
+                onClick={() => {
+                  setActiveSection(sectionId);
+                  setMenuOpen(false);
+                }}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
 
         <button
@@ -249,8 +277,8 @@ export function PortfolioPage() {
             </div>
             <div className="stat-grid">
               <div>
-                <strong>3.83</strong>
-                <span>CGPA</span>
+                <strong>Full-Stack</strong>
+                <span>Developer</span>
               </div>
               <div>
                 <strong>3+</strong>
@@ -278,7 +306,7 @@ export function PortfolioPage() {
           <div className="about-layout">
             <Reveal>
               <p className="bio">
-                Detail-oriented Computer Science student at American International University-Bangladesh (AIUB) with a 3.83 CGPA and hands-on experience in software development, machine learning, and data analysis. I specialize in building scalable web applications with Next.js, NestJS, and PostgreSQL while staying curious about research, learning, and product thinking. I am currently seeking a Software Developer, Web Developer, or Full-Stack Intern role where I can contribute, learn fast, and build real impact.
+                Detail-oriented Computer Science student at American International University-Bangladesh (AIUB) with hands-on experience in software development, machine learning, and data analysis. I specialize in building scalable web applications with Next.js, NestJS, and PostgreSQL while staying curious about research, learning, and product thinking. I am currently seeking a Software Developer, Web Developer, or Full-Stack Intern role where I can contribute, learn fast, and build real impact.
               </p>
             </Reveal>
             <StaggerGroup className="tag-list" delay={0.08} stagger={0.06} aria-label="Currently using technologies">
