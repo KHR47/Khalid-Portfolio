@@ -436,10 +436,12 @@ export function PortfolioPage() {
         <section id="home" className="hero section">
           <div className="hero-copy">
             <div className="hero-status-row">
-              <p className="eyebrow">Available for internship / developer roles</p>
+              <div className="status-pill">
+                <span className="live-dot" />
+                <span>Available for Internship & Software Developer Roles</span>
+              </div>
               {dhakaTime && (
                 <div className="live-clock-badge" title="Local Time in Dhaka, Bangladesh">
-                  <span className="live-dot" />
                   <span>{dhakaTime} (Dhaka, GMT+6)</span>
                 </div>
               )}

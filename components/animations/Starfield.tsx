@@ -9,6 +9,7 @@ interface Star {
   alpha: number;
   targetAlpha: number;
   speed: number;
+  color: string;
 }
 
 export function Starfield() {
@@ -33,17 +34,25 @@ export function Starfield() {
 
     window.addEventListener('resize', handleResize);
 
-    const starCount = Math.min(Math.floor((width * height) / 14000), 100);
+    const colors = [
+      '255, 255, 255', // Pure white
+      '125, 211, 252', // Electric Ice Blue
+      '165, 180, 252', // Soft Lavender
+      '110, 231, 183', // Subtle Emerald
+    ];
+
+    const starCount = Math.min(Math.floor((width * height) / 16000), 90);
     const stars: Star[] = [];
 
     for (let i = 0; i < starCount; i++) {
       stars.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        size: Math.random() * 1.5 + 0.5,
-        alpha: Math.random() * 0.7 + 0.1,
-        targetAlpha: Math.random() * 0.8 + 0.2,
-        speed: Math.random() * 0.008 + 0.003,
+        size: Math.random() * 1.2 + 0.4,
+        alpha: Math.random() * 0.6 + 0.1,
+        targetAlpha: Math.random() * 0.75 + 0.15,
+        speed: Math.random() * 0.007 + 0.002,
+        color: colors[Math.floor(Math.random() * colors.length)],
       });
     }
 
@@ -53,14 +62,13 @@ export function Starfield() {
       for (let i = 0; i < stars.length; i++) {
         const star = stars[i];
 
-        // Subtle alpha breathing
         if (Math.abs(star.alpha - star.targetAlpha) < 0.01) {
-          star.targetAlpha = Math.random() * 0.85 + 0.15;
+          star.targetAlpha = Math.random() * 0.8 + 0.1;
         } else {
           star.alpha += (star.targetAlpha - star.alpha) * star.speed;
         }
 
-        ctx.fillStyle = `rgba(180, 215, 255, ${star.alpha.toFixed(2)})`;
+        ctx.fillStyle = `rgba(${star.color}, ${star.alpha.toFixed(2)})`;
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
         ctx.fill();
