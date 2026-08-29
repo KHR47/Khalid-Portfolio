@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 
 export interface ProjectData {
   title: string;
-  category: 'Full-Stack' | 'Backend / API' | 'Desktop & Simulation';
+  category: 'Full-Stack' | 'AI & ML' | 'Backend / API' | 'Desktop & Graphics';
   description: string;
   longDescription?: string;
   highlights?: string[];

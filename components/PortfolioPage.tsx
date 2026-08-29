@@ -23,58 +23,75 @@ const navItems = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const techPills = ['Next.js', 'NestJS', 'React', 'TypeScript', 'PostgreSQL', 'Python', 'Docker', 'FastAPI'];
+const techPills = ['Next.js', 'NestJS', 'ASP.NET Core', 'Node.js', 'TypeScript', 'Python', 'PostgreSQL', 'BERT / NLP'];
 
 const skillGroups = [
-  { label: 'Frontend', items: ['Next.js', 'React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3'] },
-  { label: 'Backend', items: ['NestJS', 'Node.js', 'ASP.NET Core', 'FastAPI', 'PHP', 'Express'] },
-  { label: 'Database', items: ['PostgreSQL', 'MySQL', 'SQL Server', 'MongoDB', 'JDBC'] },
-  { label: 'Languages', items: ['TypeScript', 'JavaScript', 'Python', 'Java', 'C++', 'C#', 'SQL'] },
-  { label: 'Tools & DevOps', items: ['Git', 'GitHub', 'Postman', 'VS Code', 'Docker', 'Vercel'] },
+  { label: 'Languages', items: ['JavaScript (ES6)', 'TypeScript', 'Python', 'C#', 'PHP', 'Java', 'C++', 'HTML5', 'CSS3', 'SQL'] },
+  { label: 'Backend Frameworks', items: ['Node.js', 'NestJS', 'ASP.NET Core', 'FastAPI', 'Express', 'PHP'] },
+  { label: 'Frontend & UI', items: ['Next.js (App Router)', 'React', 'TypeScript', 'Responsive Design', 'Tailwind/CSS'] },
+  { label: 'Databases', items: ['PostgreSQL', 'MySQL', 'MS SQL Server', 'JDBC'] },
+  { label: 'AI, ML & Graphics', items: ['Transformers (BERT, RoBERTa)', 'NLP', 'OpenGL', 'GLUT'] },
+  { label: 'Tools & Networking', items: ['Git', 'GitHub', 'Postman', 'VS Code', 'Cisco Packet Tracer', 'Vercel'] },
 ];
 
 const projects: ProjectData[] = [
   {
+    title: 'TextGuard — AI Content Detection',
+    category: 'AI & ML',
+    description:
+      'NLP-based machine learning system using Python and transformer models (BERT and RoBERTa) to detect whether text is human-written or AI-generated.',
+    longDescription:
+      'An advanced Natural Language Processing system that fine-tunes transformer architectures (BERT and RoBERTa) to classify text authenticity and distinguish between machine-generated prose and authentic human writing with high confidence.',
+    highlights: [
+      'Engineered transformer pipelines utilizing PyTorch and HuggingFace for tokenization and classification.',
+      'Fine-tuned both BERT and RoBERTa models across synthetic and human-authored benchmark text datasets.',
+      'Evaluated accuracy, precision, and recall metrics to minimize false positives in automated text screening.',
+    ],
+    tags: ['Python', 'BERT', 'RoBERTa', 'Transformers', 'NLP', 'PyTorch'],
+    link: 'https://github.com/KHR47/TextGuard',
+    linkLabel: 'GitHub',
+  },
+  {
     title: 'SmartCity_Ecosystem',
     category: 'Full-Stack',
     description:
-      'A smart-city platform connecting public services, operational data, and user workflows into a unified dashboard for efficient urban management.',
+      'Unified smart-city dashboard connecting municipal services, operational data, and citizen workflows into a responsive web platform.',
     longDescription:
-      'A modern smart-city governance platform architected to aggregate public service workflows, operational metrics, and citizen service requests into a unified reactive dashboard. Features real-time state synchronization, modular API endpoints, and clean role-based management.',
+      'A comprehensive smart-city governance platform architected to aggregate public service workflows, operational metrics, and citizen service requests into a unified reactive dashboard. Features real-time state synchronization, modular API endpoints, and clean role-based management.',
     highlights: [
       'Full-stack architecture leveraging Next.js App Router on the client and NestJS microservices on the backend.',
       'Optimized relational data schemas in PostgreSQL with indexes for high-frequency queries.',
-      'Role-based access control (RBAC) with JWT auth and end-to-end TypeScript type contracts.',
+      'Role-based access control (RBAC) with JWT authentication and end-to-end TypeScript type contracts.',
     ],
     tags: ['Next.js', 'NestJS', 'PostgreSQL', 'TypeScript'],
     link: 'https://github.com/KHR47/SmartCity_Ecosystem',
     linkLabel: 'GitHub',
   },
   {
-    title: 'FinTrack',
+    title: 'FinTrack — Personal Finance Tracker',
     category: 'Full-Stack',
     description:
-      'Personal finance tracker designed to monitor income, expenses, and monthly budgets through a clean, intuitive web dashboard.',
+      'Web-based personal finance tracker using HTML, CSS, JavaScript, PHP, and MySQL for recording income, tracking expenses, and budgeting.',
     longDescription:
-      'Personal finance management application enabling users to log multi-category transactions, set customizable monthly budget limits, and inspect monthly cash-flow trends through dynamic summary charts.',
+      'Personal finance management application enabling users to log multi-category transactions, set customizable monthly budget limits, and inspect cash-flow trends through dynamic visual reports.',
     highlights: [
       'Interactive visual dashboard breaking down discretionary spending vs. essential utility expenses.',
-      'Secure session-based authentication and sanitized SQL operations.',
-      'Responsive design with fast server-side query processing.',
+      'Secure session-based authentication and parameterized SQL operations preventing injections.',
+      'Responsive interface with fast server-side query processing.',
     ],
     tags: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL'],
     link: 'https://github.com/KHR47/FinTrack',
     linkLabel: 'GitHub',
   },
   {
-    title: 'AirSense',
+    title: 'AirSense — Air Quality Monitoring',
     category: 'Full-Stack',
     description:
-      'Air-quality monitoring web app for visualizing AQI data, locations, and environmental patterns across multiple cities.',
+      'Full-stack air-quality monitoring web app for visualizing AQI data, locations, and pollution patterns across multiple cities.',
     longDescription:
-      'Environmental monitoring platform designed to visualize regional Air Quality Index (AQI) parameters in real time. Provides advisory alerts, particulate matter metrics, and cross-city comparisons.',
+      'Environmental monitoring platform designed to visualize regional Air Quality Index (AQI) parameters in real time. Provides advisory alerts, particulate matter metrics, and cross-city historical comparisons.',
     highlights: [
-      'Dynamic AQI visual scales alerting users to hazardous environmental levels.',
+      'Dynamic AQI visual scales alerting users to hazardous environmental thresholds.',
       'Multi-city search filters and structured relational tables for historical recording.',
     ],
     tags: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL'],
@@ -82,24 +99,41 @@ const projects: ProjectData[] = [
     linkLabel: 'GitHub',
   },
   {
-    title: 'ShopCore',
+    title: 'ShopCore — E-Commerce Backend System',
     category: 'Backend / API',
     description:
-      'RESTful backend API for e-commerce operations with secure product management and order-processing endpoints.',
+      'RESTful backend API for e-commerce using ASP.NET Core Web API, supporting product management and order handling.',
     longDescription:
-      'Enterprise-oriented backend API created with ASP.NET Core Web API. Implements structured controllers, DTO validation, and transaction pipelines for e-commerce stores.',
+      'Enterprise-grade backend REST API built with ASP.NET Core Web API. Implements structured controllers, DTO validation, and transaction pipelines for e-commerce store operations.',
     highlights: [
       'Clean Repository and Unit of Work patterns for decoupled data persistence.',
       'Comprehensive validation and structured HTTP error responses.',
-      'Fully documented endpoints and Postman integration test suites.',
+      'Tested and verified API endpoints using Postman to ensure high performance and reliability.',
     ],
-    tags: ['ASP.NET Core', 'C#', 'Web API', 'Postman', 'SQL Server'],
+    tags: ['ASP.NET Core', 'C#', 'Web API', 'Postman', 'MS SQL Server'],
+    link: 'https://github.com/KHR47/ShopCore',
+    linkLabel: 'GitHub',
   },
   {
-    title: 'PyCart',
+    title: 'Library Management System',
+    category: 'Desktop & Graphics',
+    description:
+      'Desktop management application developed in C# and Microsoft SQL Server for book inventories, student records, and borrow/return tracking.',
+    longDescription:
+      'Comprehensive management software for academic libraries built with C# and Microsoft SQL Server. Features student profiles, issue/return transactions, fine calculations, and inventory notifications.',
+    highlights: [
+      'Relational database integration with Microsoft SQL Server for robust record indexing.',
+      'Role-based administrative dashboard for handling book issuing, student profiles, and overdue alerts.',
+    ],
+    tags: ['C#', '.NET', 'MS SQL Server', 'Desktop App'],
+    link: 'https://github.com/KHR47/TourEase',
+    linkLabel: 'GitHub',
+  },
+  {
+    title: 'PyCart — E-Commerce System',
     category: 'Backend / API',
     description:
-      'Python-based shopping workflow powered by FastAPI for product inventory and high-concurrency order operations.',
+      'Modular console and web-ready e-commerce system in Python with a FastAPI backend for CRUD product and order management.',
     longDescription:
       'Asynchronous REST API engine designed with FastAPI and Pydantic for high-throughput product catalog retrieval, shopping cart persistence, and order dispatching.',
     highlights: [
@@ -107,15 +141,15 @@ const projects: ProjectData[] = [
       'Automated interactive OpenAPI / Swagger documentation out of the box.',
       'Strict schema validation using Pydantic models.',
     ],
-    tags: ['Python', 'FastAPI', 'Pydantic', 'Uvicorn'],
+    tags: ['Python', 'FastAPI', 'Pydantic', 'CRUD', 'Uvicorn'],
     link: 'https://github.com/KHR47/PyCart',
     linkLabel: 'GitHub',
   },
   {
-    title: 'The Markentile',
-    category: 'Desktop & Simulation',
+    title: 'The Markentile — Online Shopping Hub',
+    category: 'Desktop & Graphics',
     description:
-      'Desktop e-commerce application for groceries, food, and skincare products with a Java Swing interface and structured workflow.',
+      'Desktop supermarket application in Java Swing for browsing and purchasing groceries, food, and skincare products with OOP design.',
     longDescription:
       'Rich desktop application engineered with Java Swing featuring multi-category retail inventory, shopping cart state management, checkout billing calculations, and local data persistence.',
     highlights: [
@@ -123,43 +157,49 @@ const projects: ProjectData[] = [
       'Custom Swing component styling, layout managers, and robust input validation.',
     ],
     tags: ['Java', 'Swing GUI', 'OOP', 'Desktop App'],
+    link: 'https://github.com/KHR47/The-Markentile',
+    linkLabel: 'GitHub',
   },
   {
-    title: 'TourEase',
-    category: 'Desktop & Simulation',
+    title: 'TourEase — Tourist Management Database',
+    category: 'Desktop & Graphics',
     description:
-      'Tourism management database project covering customer management, bookings, hotel operations, and payment tracking.',
+      'Structured database project built using SQL to manage tourists, bookings, hotel operations, and payments in an organized system.',
     longDescription:
       'Comprehensive database-driven application built to manage travel agency operations including tour packages, hotel reservations, client profiles, and payment histories.',
     highlights: [
       'Normalized relational database structure (3NF) ensuring relational consistency.',
       'JDBC implementation for executing parameterized queries and transactional updates.',
     ],
-    tags: ['MySQL', 'SQL', 'JDBC', 'Java'],
+    tags: ['MySQL', 'SQL', 'JDBC', 'Database System'],
+    link: 'https://github.com/KHR47/TourEase',
+    linkLabel: 'GitHub',
   },
   {
-    title: 'NikunjaScape',
-    category: 'Desktop & Simulation',
+    title: 'NikunjaScape — Computer Graphics Simulation',
+    category: 'Desktop & Graphics',
     description:
-      'Computer graphics simulation of Nikunja 1 & 2 featuring roads, buildings, vehicles, and animated environment changes.',
+      'Realistic computer graphics simulation of Nikunja 1 & 2 built with C++, OpenGL, and GLUT featuring road networks and dynamic lighting.',
     longDescription:
-      'Interactive 3D graphical urban simulation recreating the roads, architectures, and traffic flows of Nikunja 1 & 2 using low-level graphics rendering primitives.',
+      'Interactive 3D graphical urban simulation recreating the roads, architectures, and traffic flows of Nikunja 1 & 2 with moving vehicles, day/night cycles, and camera navigation.',
     highlights: [
       'Implemented custom lighting models, camera projection transforms, and animation loops.',
       'Built in C++ utilizing OpenGL and GLUT graphical libraries.',
     ],
     tags: ['C++', 'OpenGL', 'GLUT', 'Computer Graphics'],
+    link: 'https://github.com/KHR47/NikunjaScape',
+    linkLabel: 'GitHub',
   },
 ];
 
-const categories = ['All', 'Full-Stack', 'Backend / API', 'Desktop & Simulation'] as const;
+const categories = ['All', 'Full-Stack', 'AI & ML', 'Backend / API', 'Desktop & Graphics'] as const;
 type CategoryType = (typeof categories)[number];
 
 const inquiryPresets = [
-  { label: '💼 Full-Stack Role', text: 'Hi Khalid, I came across your portfolio and would like to discuss a Full-Stack Developer opportunity with our team.' },
-  { label: '🚀 Internship Opportunity', text: 'Hi Khalid, we have an opening for a Software Engineering / Web Development Intern that aligns with your profile.' },
+  { label: '💼 Software Developer Role', text: 'Hi Khalid, I came across your portfolio and would like to discuss a Software Developer / Backend opportunity.' },
+  { label: '🚀 Internship Opportunity', text: 'Hi Khalid, we have an opening for a Full-Stack / Web Development Intern that aligns with your profile.' },
   { label: '🤝 Project Collaboration', text: 'Hi Khalid, I have an interesting software project and would love to collaborate with you.' },
-  { label: '☕ Quick Networking', text: 'Hi Khalid, I saw your projects and would love to connect and chat about tech.' },
+  { label: '☕ Quick Networking', text: 'Hi Khalid, I saw your projects on GitHub and would love to connect!' },
 ];
 
 const socials = [
@@ -170,8 +210,14 @@ const socials = [
     icon: '✉',
   },
   {
+    label: 'Phone',
+    href: 'tel:+8801568966255',
+    value: '+880 1568-966255',
+    icon: '📞',
+  },
+  {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/khr47',
+    href: 'https://www.linkedin.com/in/khr47/',
     value: 'linkedin.com/in/khr47',
     icon: 'in',
   },
@@ -180,6 +226,12 @@ const socials = [
     href: 'https://github.com/KHR47',
     value: 'github.com/KHR47',
     icon: 'GH',
+  },
+  {
+    label: 'Location',
+    href: '#',
+    value: 'Rajshahi / Dhaka, Bangladesh',
+    icon: '📍',
   },
 ];
 
@@ -253,7 +305,6 @@ export function PortfolioPage() {
       setCopiedEmail(true);
       setTimeout(() => setCopiedEmail(false), 2400);
     } catch {
-      // Fallback
       setCopiedEmail(false);
     }
   };
@@ -401,7 +452,7 @@ export function PortfolioPage() {
 
             <div className="hero-quote">
               <blockquote>
-                “I design and build responsive digital products that blend solid engineering with thoughtful user experience.”
+                “Final-semester CSE student passionate about backend architecture, scalable systems, and building high-performance web applications.”
               </blockquote>
             </div>
 
@@ -432,14 +483,14 @@ export function PortfolioPage() {
             <div className="stat-grid">
               <div>
                 <strong>Full-Stack</strong>
-                <span>Developer</span>
+                <span>& Backend</span>
               </div>
               <div>
                 <strong>AIUB</strong>
-                <span>CS Major</span>
+                <span>CSE Student</span>
               </div>
               <div>
-                <strong>8+</strong>
+                <strong>10+</strong>
                 <span>Projects</span>
               </div>
               <div>
@@ -461,7 +512,7 @@ export function PortfolioPage() {
           <div className="about-layout">
             <Reveal>
               <p className="bio">
-                Detail-oriented Computer Science student at American International University-Bangladesh (AIUB) with hands-on experience in software development, machine learning, and data analysis. I specialize in building scalable web applications with Next.js, NestJS, and PostgreSQL while staying curious about research, learning, and product thinking. I am currently seeking a Software Developer, Web Developer, or Full-Stack Intern role where I can contribute, learn fast, and build real impact.
+                Final-semester Computer Science & Engineering student at American International University-Bangladesh (AIUB) with hands-on experience building web applications and RESTful APIs using ASP.NET Core, Node.js, NestJS, and Next.js. Proficient in JavaScript (ES6), TypeScript, Python, C#, PHP, Java, and C++, with a strong dedication to scalable backend architectures, clean design patterns, and engineering discipline. Currently seeking a Software Developer, Web Developer, or Full-Stack Intern role where I can contribute creativity and build real impact.
               </p>
             </Reveal>
             <StaggerGroup className="tag-list" delay={0.08} stagger={0.06} aria-label="Currently using technologies">
@@ -478,7 +529,7 @@ export function PortfolioPage() {
         <section id="education" className="section">
           <Reveal>
             <div className="section-heading">
-              <p className="eyebrow">Education & Background</p>
+              <p className="eyebrow">Educational Qualifications</p>
               <h2>Academic foundation and technical trajectory.</h2>
             </div>
           </Reveal>
@@ -541,7 +592,7 @@ export function PortfolioPage() {
             ))}
           </div>
 
-          <StaggerGroup className="project-grid" delay={0.05} stagger={0.06}>
+          <StaggerGroup className="project-grid" delay={0.05} stagger={0.05}>
             {filteredProjects.map((project) => (
               <StaggerItem key={project.title} className="project-card">
                 <article>
@@ -664,8 +715,8 @@ export function PortfolioPage() {
                   <a
                     key={social.label}
                     href={social.href}
-                    target={social.label === 'Email' ? undefined : '_blank'}
-                    rel={social.label === 'Email' ? undefined : 'noreferrer'}
+                    target={social.href.startsWith('http') ? '_blank' : undefined}
+                    rel={social.href.startsWith('http') ? 'noreferrer' : undefined}
                     className="social-link"
                   >
                     <span className="social-icon">{social.icon}</span>
@@ -679,7 +730,7 @@ export function PortfolioPage() {
                 <div className="recruiter-quick-card">
                   <h4>Recruiting & Opportunities</h4>
                   <p>
-                    Open to <strong>Internship</strong> and <strong>Junior Software Developer</strong> roles (Full-Stack / Backend / Web).
+                    Open to <strong>Internship</strong> and <strong>Software Developer / Backend</strong> roles (ASP.NET Core, Node.js, NestJS, Next.js).
                   </p>
                   <button
                     type="button"

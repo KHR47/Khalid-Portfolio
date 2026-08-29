@@ -18,12 +18,13 @@ An ultra-sleek, responsive, and performance-optimized personal portfolio web app
 
 ## ✨ Features & Highlights
 
-- **🪐 Immersive Space Aesthetic:** Cosmic dark theme featuring deep radial gradients, orbiting celestial textures, and glassmorphism.
-- **⚡ Reactive Navigation & Scrollspy:** Sticky header with real-time reading progress bar, dynamic section tracking (`#about`, `#skills`, `#projects`, `#contact`), and smooth scroll offsets.
+- **🪐 Immersive Space Aesthetic:** Cosmic dark theme featuring deep radial gradients, interactive canvas starfield, and glassmorphic panels.
+- **⚡ Reactive Navigation & Scrollspy:** Sticky header with real-time reading progress bar, dynamic section tracking (`#about`, `#education`, `#skills`, `#projects`, `#contact`), and smooth scroll offsets.
+- **🎓 Academic Journey & Qualifications:** Structured timeline detailing B.Sc. in CSE at AIUB, HSC at Rajshahi New Govt. Degree College, and SSC at Rajshahi Collegiate School with key competencies.
 - **🧲 Micro-Interactions & Physics:** Magnetic buttons with spring physics, character and word reveals, and staggered viewport entrance animations.
-- **🛠️ Categorized Skills Matrix:** Interactive badges grouped across Frontend, Backend, Databases, Languages, and Development Tools.
-- **💼 Project Showcase:** Curated grid of 8 software engineering projects spanning full-stack web platforms, REST APIs, simulations, and desktop apps with direct GitHub repository links.
-- **📬 Full-Stack Contact API:** Integrated contact route supporting **Resend API** for high-deliverability emails, **Nodemailer SMTP** as a fallback, and localized developer mode.
+- **🛠️ Categorized Skills Matrix:** Interactive badges grouped across Languages, Backend Frameworks, Frontend, Databases, AI/ML, and Tools.
+- **💼 Interactive Project Showcase & Case Study Modals:** Filterable grid of 10 engineering projects spanning AI/NLP (BERT & RoBERTa), full-stack platforms, REST APIs, desktop applications, and computer graphics simulations with case-study modals.
+- **📬 Full-Stack Contact API:** Integrated contact route supporting **Resend API** for high-deliverability emails, **Nodemailer SMTP** as a fallback, quick inquiry topic pills, and one-click email copying.
 - **📱 Fully Responsive:** Adaptive mobile navigation drawer, fluid typography clamps, and tailored layouts for all screen sizes.
 - **🔍 SEO & Social Graph:** Configured with OpenGraph, Twitter card metadata, dynamic typography from Google Fonts (`Space Grotesk` + `Manrope`), and SVG icons.
 
@@ -61,9 +62,12 @@ portfolio-next/
 │   │   ├── MagneticButton.tsx    # Magnetic mouse-tracking button
 │   │   ├── Reveal.tsx            # In-view scroll entrance wrapper
 │   │   ├── StaggerGroup.tsx      # Staggered children container
+│   │   ├── Starfield.tsx         # Lightweight canvas starfield animation
 │   │   ├── TextReveal.tsx        # Dynamic character/word reveal
 │   │   ├── useScrollProgress.ts  # Custom hook for window scroll tracking
 │   │   └── index.ts              # Component exports
+│   ├── EducationTimeline.tsx     # Academic qualifications and timeline
+│   ├── ProjectModal.tsx          # Case study modal dialog
 │   └── PortfolioPage.tsx         # Main portfolio layout and interactive state
 ├── public/                       # Static images, icons, and SVG graphics
 ├── styles/
@@ -103,7 +107,7 @@ Populate the values if you wish to test live email delivery:
 ```env
 # Resend (Recommended)
 RESEND_API_KEY=re_your_api_key_here
-CONTACT_TO_EMAIL=your_email@example.com
+CONTACT_TO_EMAIL=hasankhalid16648@gmail.com
 RESEND_FROM_EMAIL="Portfolio Contact <onboarding@resend.dev>"
 
 # SMTP Fallback (Optional)
@@ -139,10 +143,11 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 ## 👤 Author
 
 **Md. Khalid Hasan**
-* Computer Science Student at American International University-Bangladesh (AIUB)
+* Final-semester Computer Science & Engineering Student at American International University-Bangladesh (AIUB)
 * **GitHub:** [@KHR47](https://github.com/KHR47)
-* **LinkedIn:** [linkedin.com/in/khr47](https://www.linkedin.com/in/khr47)
+* **LinkedIn:** [linkedin.com/in/khr47](https://www.linkedin.com/in/khr47/)
 * **Email:** [hasankhalid16648@gmail.com](mailto:hasankhalid16648@gmail.com)
+* **Phone:** +880 1568-966255
 
 ---
 
