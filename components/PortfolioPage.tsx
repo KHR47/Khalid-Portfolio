@@ -465,6 +465,7 @@ export function PortfolioPage() {
               </MagneticButton>
               <a
                 href="/resume.pdf"
+                download="Md_Khalid_Hasan_CV.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="button outline cv-button"
@@ -739,6 +740,16 @@ export function PortfolioPage() {
                   >
                     {copiedEmail ? '✓ Copied Email to Clipboard!' : '📋 Copy Email Address'}
                   </button>
+                  <a
+                    href="/resume.pdf"
+                    download="Md_Khalid_Hasan_CV.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="button outline copy-full-btn"
+                    style={{ marginTop: '8px' }}
+                  >
+                    <span>📄 Download Official CV</span>
+                  </a>
                 </div>
               </div>
             </Reveal>
